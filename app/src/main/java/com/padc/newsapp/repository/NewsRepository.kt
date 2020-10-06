@@ -17,6 +17,7 @@ class NewsRepository @Inject constructor(private val newsRemoteDataSource: NewsR
         newsRemoteDataSource.getAllNews()
     },
     savecallResult ={
+        Log.d("size",it.articles.size.toString())
         localDataSource.insertAll(it.articles)
     } )
 }
